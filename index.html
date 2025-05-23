@@ -1,9 +1,55 @@
-<!-- Link to Bitcoin Guide -->
-<html>
-  <head>
-    <title>Bitcoin Guide</title>
-  </head>
-  <body>
-    <a href="https://brice.dev/bitcoin.pdf">Download Bitcoin Guide</a>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crow or Raven?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #333;
+    }
+    .upload-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input[type="file"] {
+      margin-top: 1rem;
+    }
+    #result {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-box">
+    <h1>Crow or Raven?</h1>
+    <p>Upload a picture of a bird and we’ll tell you what it is.</p>
+    <input type="file" id="birdImage" accept="image/*" />
+    <div id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById('birdImage').addEventListener('change', function() {
+      const resultDiv = document.getElementById('result');
+      if (this.files && this.files[0]) {
+        resultDiv.textContent = 'That’s a crow!';
+      }
+    });
+  </script>
+</body>
 </html>
